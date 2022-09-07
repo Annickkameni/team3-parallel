@@ -20,7 +20,7 @@ pipeline{
 	           }
 			   stage('user-check'){
 				  steps{
-					sh 'cat /etc/passwd } grep jenkins'
+					sh 'cat /etc/passwd | grep jenkins'
 				  }
 			   }
 	       }
