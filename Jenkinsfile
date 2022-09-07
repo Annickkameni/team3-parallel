@@ -20,7 +20,7 @@ pipeline{
 	           }
 			   stage('user-check'){
 				  steps{
-					sh 'cat /etc/passwd } grep jenkins'
+					sh 'cat /etc/passwd | grep jenkins'
 				  }
 			   }
 	       }
@@ -29,6 +29,11 @@ pipeline{
 	       steps{
 	           echo "end of parallel job"
 	       }
+	   }
+	   stage('webhook-fix'){
+		steps{
+			echo "webhook fix"
+		}
 	   }
 	}
 }
