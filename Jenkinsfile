@@ -18,6 +18,11 @@ pipeline{
 	                   echo "sub-job2 task"
 	               }
 	           }
+			   stage('user-check'){
+				  steps{
+					sh 'cat /etc/passwd } grep jenkins'
+				  }
+			   }
 	       }
 	   }
 	   stage('version-check'){
