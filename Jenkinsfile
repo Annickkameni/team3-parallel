@@ -1,5 +1,8 @@
 pipeline{
 	agent any
+        label {
+            label 'slave1'
+        }
 	stages{
 		stage('git-clone'){
 			steps{
@@ -31,9 +34,12 @@ pipeline{
 	       }
 	   }
 	   stage('webhook-fix'){
-		steps{
-			echo "webhook fix"
-		}
-	   }
+            label{
+                label 'slave2'
+            }
+		    steps{
+			    echo "webhook fix"
+		    }
+	    }
 	}
 }
